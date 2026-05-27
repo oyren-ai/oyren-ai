@@ -1,0 +1,669 @@
+{
+  "id": "index",
+  "symbol": "index",
+  "sourceFile": "index",
+  "group": ".",
+  "children": [
+    {
+      "id": "handleAgentRequest::handleAgentRequest",
+      "symbol": "handleAgentRequest",
+      "sourceFile": "handleAgentRequest",
+      "group": ".",
+      "children": [
+        {
+          "id": "types/AgentRequest::AgentRequest",
+          "symbol": "AgentRequest",
+          "sourceFile": "types/AgentRequest",
+          "group": "types",
+          "children": []
+        },
+        {
+          "id": "handlers/handleChat::handleChat",
+          "symbol": "handleChat",
+          "sourceFile": "handlers/handleChat",
+          "group": "handlers",
+          "children": [
+            {
+              "id": "handlers/chatWithLlm::chatWithLlm",
+              "symbol": "chatWithLlm",
+              "sourceFile": "handlers/chatWithLlm",
+              "group": "handlers",
+              "children": [
+                {
+                  "id": "types/AiProvider::AiProvider",
+                  "symbol": "AiProvider",
+                  "sourceFile": "types/AiProvider",
+                  "group": "types",
+                  "children": []
+                },
+                {
+                  "id": "providers/deepseek/chatWithDeepSeek::chatWithDeepSeek",
+                  "symbol": "chatWithDeepSeek",
+                  "sourceFile": "providers/deepseek/chatWithDeepSeek",
+                  "group": "providers/deepseek",
+                  "children": [
+                    {
+                      "id": "capabilities/chat/chatWithProviderModel::chatWithProviderModel",
+                      "symbol": "chatWithProviderModel",
+                      "sourceFile": "capabilities/chat/chatWithProviderModel",
+                      "group": "capabilities/chat",
+                      "children": [
+                        {
+                          "id": "providers/utils::buildMultimodalMessages",
+                          "symbol": "buildMultimodalMessages",
+                          "sourceFile": "providers/utils",
+                          "group": "providers",
+                          "children": []
+                        },
+                        {
+                          "id": "capabilities/toolcalling/executeWithTools::executeWithTools",
+                          "symbol": "executeWithTools",
+                          "sourceFile": "capabilities/toolcalling/executeWithTools",
+                          "group": "capabilities/toolcalling",
+                          "children": [
+                            {
+                              "id": "capabilities/toolcalling/arxivFetchTool::arxivFetchTool",
+                              "symbol": "arxivFetchTool",
+                              "sourceFile": "capabilities/toolcalling/arxivFetchTool",
+                              "group": "capabilities/toolcalling",
+                              "children": [
+                                {
+                                  "id": "capabilities/toolcalling/arxiv/fetchPaperText::fetchPaperText",
+                                  "symbol": "fetchPaperText",
+                                  "sourceFile": "capabilities/toolcalling/arxiv/fetchPaperText",
+                                  "group": "capabilities/toolcalling/arxiv",
+                                  "children": [
+                                    {
+                                      "id": "capabilities/toolcalling/arxiv/htmlToText::stripHtmlToText",
+                                      "symbol": "stripHtmlToText",
+                                      "sourceFile": "capabilities/toolcalling/arxiv/htmlToText",
+                                      "group": "capabilities/toolcalling/arxiv",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "capabilities/toolcalling/arxiv/htmlToText::truncateText",
+                                      "symbol": "truncateText",
+                                      "sourceFile": "capabilities/toolcalling/arxiv/htmlToText",
+                                      "group": "capabilities/toolcalling/arxiv",
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": "capabilities/toolcalling/arxivSearchTool::arxivSearchTool",
+                              "symbol": "arxivSearchTool",
+                              "sourceFile": "capabilities/toolcalling/arxivSearchTool",
+                              "group": "capabilities/toolcalling",
+                              "children": [
+                                {
+                                  "id": "capabilities/toolcalling/arxiv/searchArxiv::searchArxiv",
+                                  "symbol": "searchArxiv",
+                                  "sourceFile": "capabilities/toolcalling/arxiv/searchArxiv",
+                                  "group": "capabilities/toolcalling/arxiv",
+                                  "children": [
+                                    {
+                                      "id": "capabilities/toolcalling/arxiv/queryExpander::expandQueries",
+                                      "symbol": "expandQueries",
+                                      "sourceFile": "capabilities/toolcalling/arxiv/queryExpander",
+                                      "group": "capabilities/toolcalling/arxiv",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "capabilities/toolcalling/arxiv/filterWithdrawnPapers::filterWithdrawnPapers",
+                                      "symbol": "filterWithdrawnPapers",
+                                      "sourceFile": "capabilities/toolcalling/arxiv/filterWithdrawnPapers",
+                                      "group": "capabilities/toolcalling/arxiv",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "capabilities/toolcalling/arxiv/parallelSearch::parallelArxivSearch",
+                                      "symbol": "parallelArxivSearch",
+                                      "sourceFile": "capabilities/toolcalling/arxiv/parallelSearch",
+                                      "group": "capabilities/toolcalling/arxiv",
+                                      "children": [
+                                        {
+                                          "id": "capabilities/toolcalling/arxiv/deduplicateResults::deduplicatePapers",
+                                          "symbol": "deduplicatePapers",
+                                          "sourceFile": "capabilities/toolcalling/arxiv/deduplicateResults",
+                                          "group": "capabilities/toolcalling/arxiv",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "capabilities/toolcalling/arxiv/searchArxiv::searchArxivSingle",
+                                          "symbol": "searchArxivSingle",
+                                          "sourceFile": "capabilities/toolcalling/arxiv/searchArxiv",
+                                          "group": "capabilities/toolcalling/arxiv",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "capabilities/toolcalling/arxiv/parseAtomXml::parseAtomResponse",
+                                      "symbol": "parseAtomResponse",
+                                      "sourceFile": "capabilities/toolcalling/arxiv/parseAtomXml",
+                                      "group": "capabilities/toolcalling/arxiv",
+                                      "children": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": "capabilities/toolcalling/toolCallResultBuilder::buildToolCallResult",
+                              "symbol": "buildToolCallResult",
+                              "sourceFile": "capabilities/toolcalling/toolCallResultBuilder",
+                              "group": "capabilities/toolcalling",
+                              "children": []
+                            },
+                            {
+                              "id": "capabilities/toolcalling/toolCallResultBuilder::collectPapersFromSearch",
+                              "symbol": "collectPapersFromSearch",
+                              "sourceFile": "capabilities/toolcalling/toolCallResultBuilder",
+                              "group": "capabilities/toolcalling",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "providers/deepseek/deepseekErrors::handleDeepSeekError",
+                      "symbol": "handleDeepSeekError",
+                      "sourceFile": "providers/deepseek/deepseekErrors",
+                      "group": "providers/deepseek",
+                      "children": [
+                        {
+                          "id": "types/SidecarError::SidecarError",
+                          "symbol": "SidecarError",
+                          "sourceFile": "types/SidecarError",
+                          "group": "types",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "providers/gemini/chatWithGemini::chatWithGemini",
+                  "symbol": "chatWithGemini",
+                  "sourceFile": "providers/gemini/chatWithGemini",
+                  "group": "providers/gemini",
+                  "children": [
+                    {
+                      "id": "capabilities/chat/chatWithProviderModel::chatWithProviderModel",
+                      "symbol": "chatWithProviderModel",
+                      "sourceFile": "capabilities/chat/chatWithProviderModel",
+                      "group": "capabilities/chat",
+                      "children": []
+                    },
+                    {
+                      "id": "providers/gemini/geminiErrors::handleGeminiError",
+                      "symbol": "handleGeminiError",
+                      "sourceFile": "providers/gemini/geminiErrors",
+                      "group": "providers/gemini",
+                      "children": [
+                        {
+                          "id": "types/SidecarError::SidecarError",
+                          "symbol": "SidecarError",
+                          "sourceFile": "types/SidecarError",
+                          "group": "types",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "providers/ollama/ollamaChat::chatWithOllama",
+                  "symbol": "chatWithOllama",
+                  "sourceFile": "providers/ollama/ollamaChat",
+                  "group": "providers/ollama",
+                  "children": [
+                    {
+                      "id": "capabilities/chat/chatWithProviderModel::chatWithProviderModel",
+                      "symbol": "chatWithProviderModel",
+                      "sourceFile": "capabilities/chat/chatWithProviderModel",
+                      "group": "capabilities/chat",
+                      "children": []
+                    },
+                    {
+                      "id": "providers/ollama/ollamaErrors::handleOllamaError",
+                      "symbol": "handleOllamaError",
+                      "sourceFile": "providers/ollama/ollamaErrors",
+                      "group": "providers/ollama",
+                      "children": [
+                        {
+                          "id": "types/SidecarError::SidecarError",
+                          "symbol": "SidecarError",
+                          "sourceFile": "types/SidecarError",
+                          "group": "types",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "providers/openrouter/chatWithOpenRouter::chatWithOpenRouter",
+                  "symbol": "chatWithOpenRouter",
+                  "sourceFile": "providers/openrouter/chatWithOpenRouter",
+                  "group": "providers/openrouter",
+                  "children": [
+                    {
+                      "id": "capabilities/chat/chatWithProviderModel::chatWithProviderModel",
+                      "symbol": "chatWithProviderModel",
+                      "sourceFile": "capabilities/chat/chatWithProviderModel",
+                      "group": "capabilities/chat",
+                      "children": []
+                    },
+                    {
+                      "id": "providers/openrouter/openRouterErrors::handleOpenRouterError",
+                      "symbol": "handleOpenRouterError",
+                      "sourceFile": "providers/openrouter/openRouterErrors",
+                      "group": "providers/openrouter",
+                      "children": [
+                        {
+                          "id": "types/SidecarError::SidecarError",
+                          "symbol": "SidecarError",
+                          "sourceFile": "types/SidecarError",
+                          "group": "types",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "types/SidecarError::SidecarError",
+                  "symbol": "SidecarError",
+                  "sourceFile": "types/SidecarError",
+                  "group": "types",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "providers/createLlmChatClient::createLlmChatClient",
+              "symbol": "createLlmChatClient",
+              "sourceFile": "providers/createLlmChatClient",
+              "group": "providers",
+              "children": [
+                {
+                  "id": "types/AiProvider::AiProvider",
+                  "symbol": "AiProvider",
+                  "sourceFile": "types/AiProvider",
+                  "group": "types",
+                  "children": []
+                },
+                {
+                  "id": "providers/deepseek/createDeepSeekClient::createDeepSeekClient",
+                  "symbol": "createDeepSeekClient",
+                  "sourceFile": "providers/deepseek/createDeepSeekClient",
+                  "group": "providers/deepseek",
+                  "children": []
+                },
+                {
+                  "id": "providers/gemini/createGeminiClient::createGeminiClient",
+                  "symbol": "createGeminiClient",
+                  "sourceFile": "providers/gemini/createGeminiClient",
+                  "group": "providers/gemini",
+                  "children": [
+                    {
+                      "id": "types/LlmChatClient::LlmChatClient",
+                      "symbol": "LlmChatClient",
+                      "sourceFile": "types/LlmChatClient",
+                      "group": "types",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "providers/ollama/createOllamaClient::createOllamaClient",
+                  "symbol": "createOllamaClient",
+                  "sourceFile": "providers/ollama/createOllamaClient",
+                  "group": "providers/ollama",
+                  "children": []
+                },
+                {
+                  "id": "providers/openrouter/createOpenRouterClient::createOpenRouterClient",
+                  "symbol": "createOpenRouterClient",
+                  "sourceFile": "providers/openrouter/createOpenRouterClient",
+                  "group": "providers/openrouter",
+                  "children": [
+                    {
+                      "id": "types/LlmChatClient::LlmChatClient",
+                      "symbol": "LlmChatClient",
+                      "sourceFile": "types/LlmChatClient",
+                      "group": "types",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "prompts/promptBuilder::createSystemMessage",
+              "symbol": "createSystemMessage",
+              "sourceFile": "prompts/promptBuilder",
+              "group": "prompts",
+              "children": [
+                {
+                  "id": "prompts/components/systemPromptComponents::BASE_SYSTEM_PROMPT",
+                  "symbol": "BASE_SYSTEM_PROMPT",
+                  "sourceFile": "prompts/components/systemPromptComponents",
+                  "group": "prompts/components",
+                  "children": []
+                },
+                {
+                  "id": "prompts/components/responseFormat::CITATION_FORMAT_INSTRUCTIONS",
+                  "symbol": "CITATION_FORMAT_INSTRUCTIONS",
+                  "sourceFile": "prompts/components/responseFormat",
+                  "group": "prompts/components",
+                  "children": []
+                },
+                {
+                  "id": "prompts/components/systemPromptComponents::CONCISE_MODE_INSTRUCTIONS",
+                  "symbol": "CONCISE_MODE_INSTRUCTIONS",
+                  "sourceFile": "prompts/components/systemPromptComponents",
+                  "group": "prompts/components",
+                  "children": []
+                },
+                {
+                  "id": "types/ConversationMessage::ConversationMessage",
+                  "symbol": "ConversationMessage",
+                  "sourceFile": "types/ConversationMessage",
+                  "group": "types",
+                  "children": []
+                },
+                {
+                  "id": "prompts/documentContext::countDocuments",
+                  "symbol": "countDocuments",
+                  "sourceFile": "prompts/documentContext",
+                  "group": "prompts",
+                  "children": []
+                },
+                {
+                  "id": "prompts/components/systemPromptComponents::DETAILED_MODE_INSTRUCTIONS",
+                  "symbol": "DETAILED_MODE_INSTRUCTIONS",
+                  "sourceFile": "prompts/components/systemPromptComponents",
+                  "group": "prompts/components",
+                  "children": []
+                },
+                {
+                  "id": "prompts/components/systemPromptComponents::DOCUMENT_CITATION_INSTRUCTIONS",
+                  "symbol": "DOCUMENT_CITATION_INSTRUCTIONS",
+                  "sourceFile": "prompts/components/systemPromptComponents",
+                  "group": "prompts/components",
+                  "children": []
+                },
+                {
+                  "id": "prompts/components/systemPromptComponents::EMPTY_DOCUMENT_SUGGESTION",
+                  "symbol": "EMPTY_DOCUMENT_SUGGESTION",
+                  "sourceFile": "prompts/components/systemPromptComponents",
+                  "group": "prompts/components",
+                  "children": []
+                },
+                {
+                  "id": "prompts/documentContext::hasDocuments",
+                  "symbol": "hasDocuments",
+                  "sourceFile": "prompts/documentContext",
+                  "group": "prompts",
+                  "children": []
+                },
+                {
+                  "id": "prompts/documentContext::hasEmptyDocuments",
+                  "symbol": "hasEmptyDocuments",
+                  "sourceFile": "prompts/documentContext",
+                  "group": "prompts",
+                  "children": []
+                },
+                {
+                  "id": "prompts/components/responseFormat::MDX_LATEX_INSTRUCTIONS",
+                  "symbol": "MDX_LATEX_INSTRUCTIONS",
+                  "sourceFile": "prompts/components/responseFormat",
+                  "group": "prompts/components",
+                  "children": []
+                },
+                {
+                  "id": "prompts/components/systemPromptComponents::NO_DOCUMENT_SUGGESTION",
+                  "symbol": "NO_DOCUMENT_SUGGESTION",
+                  "sourceFile": "prompts/components/systemPromptComponents",
+                  "group": "prompts/components",
+                  "children": []
+                },
+                {
+                  "id": "prompts/components/systemPromptComponents::SHORT_MODE_INSTRUCTIONS",
+                  "symbol": "SHORT_MODE_INSTRUCTIONS",
+                  "sourceFile": "prompts/components/systemPromptComponents",
+                  "group": "prompts/components",
+                  "children": []
+                },
+                {
+                  "id": "prompts/components/systemPromptComponents::TOOL_USAGE_INSTRUCTIONS",
+                  "symbol": "TOOL_USAGE_INSTRUCTIONS",
+                  "sourceFile": "prompts/components/systemPromptComponents",
+                  "group": "prompts/components",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "intent/extractIntent::extractIntent",
+              "symbol": "extractIntent",
+              "sourceFile": "intent/extractIntent",
+              "group": "intent",
+              "children": [
+                {
+                  "id": "prompts/documentContext::hasDocuments",
+                  "symbol": "hasDocuments",
+                  "sourceFile": "prompts/documentContext",
+                  "group": "prompts",
+                  "children": []
+                },
+                {
+                  "id": "intent/intentPrompt::INTENT_EXTRACTION_PROMPT",
+                  "symbol": "INTENT_EXTRACTION_PROMPT",
+                  "sourceFile": "intent/intentPrompt",
+                  "group": "intent",
+                  "children": []
+                },
+                {
+                  "id": "intent/parseIntentResponse::parseIntentResponse",
+                  "symbol": "parseIntentResponse",
+                  "sourceFile": "intent/parseIntentResponse",
+                  "group": "intent",
+                  "children": [
+                    {
+                      "id": "prompts/documentContext::hasDocuments",
+                      "symbol": "hasDocuments",
+                      "sourceFile": "prompts/documentContext",
+                      "group": "prompts",
+                      "children": []
+                    },
+                    {
+                      "id": "intent/types::UserIntent",
+                      "symbol": "UserIntent",
+                      "sourceFile": "intent/types",
+                      "group": "intent",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "intent/types::UserIntent",
+                  "symbol": "UserIntent",
+                  "sourceFile": "intent/types",
+                  "group": "intent",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "capabilities/toolcalling/arxiv/types::paperToMeta",
+              "symbol": "paperToMeta",
+              "sourceFile": "capabilities/toolcalling/arxiv/types",
+              "group": "capabilities/toolcalling/arxiv",
+              "children": []
+            },
+            {
+              "id": "capabilities/toolcalling/arxiv/searchArxiv::searchArxivWithIntent",
+              "symbol": "searchArxivWithIntent",
+              "sourceFile": "capabilities/toolcalling/arxiv/searchArxiv",
+              "group": "capabilities/toolcalling/arxiv",
+              "children": []
+            },
+            {
+              "id": "types/SidecarError::SidecarError",
+              "symbol": "SidecarError",
+              "sourceFile": "types/SidecarError",
+              "group": "types",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "handlers/handleDetectLocalModels::handleDetectLocalModels",
+          "symbol": "handleDetectLocalModels",
+          "sourceFile": "handlers/handleDetectLocalModels",
+          "group": "handlers",
+          "children": [
+            {
+              "id": "types/AgentRequest::DetectLocalModelsRequest",
+              "symbol": "DetectLocalModelsRequest",
+              "sourceFile": "types/AgentRequest",
+              "group": "types",
+              "children": []
+            },
+            {
+              "id": "providers/ollama/ollama::detectOllamaModels",
+              "symbol": "detectOllamaModels",
+              "sourceFile": "providers/ollama/ollama",
+              "group": "providers/ollama",
+              "children": [
+                {
+                  "id": "types/SidecarError::SidecarError",
+                  "symbol": "SidecarError",
+                  "sourceFile": "types/SidecarError",
+                  "group": "types",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "types/SidecarError::SidecarError",
+              "symbol": "SidecarError",
+              "sourceFile": "types/SidecarError",
+              "group": "types",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "handlers/handleTestConnection::handleTestConnection",
+          "symbol": "handleTestConnection",
+          "sourceFile": "handlers/handleTestConnection",
+          "group": "handlers",
+          "children": [
+            {
+              "id": "types/SidecarError::SidecarError",
+              "symbol": "SidecarError",
+              "sourceFile": "types/SidecarError",
+              "group": "types",
+              "children": []
+            },
+            {
+              "id": "types/AgentRequest::TestConnectionRequest",
+              "symbol": "TestConnectionRequest",
+              "sourceFile": "types/AgentRequest",
+              "group": "types",
+              "children": []
+            },
+            {
+              "id": "providers/deepseek/testDeepSeekConnection::testDeepSeekConnection",
+              "symbol": "testDeepSeekConnection",
+              "sourceFile": "providers/deepseek/testDeepSeekConnection",
+              "group": "providers/deepseek",
+              "children": [
+                {
+                  "id": "types/SidecarError::SidecarError",
+                  "symbol": "SidecarError",
+                  "sourceFile": "types/SidecarError",
+                  "group": "types",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "providers/gemini/testGeminiConnection::testGeminiConnection",
+              "symbol": "testGeminiConnection",
+              "sourceFile": "providers/gemini/testGeminiConnection",
+              "group": "providers/gemini",
+              "children": [
+                {
+                  "id": "types/SidecarError::SidecarError",
+                  "symbol": "SidecarError",
+                  "sourceFile": "types/SidecarError",
+                  "group": "types",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "providers/ollama/ollama::testOllamaConnection",
+              "symbol": "testOllamaConnection",
+              "sourceFile": "providers/ollama/ollama",
+              "group": "providers/ollama",
+              "children": []
+            },
+            {
+              "id": "providers/openrouter/testOpenRouterConnection::testOpenRouterConnection",
+              "symbol": "testOpenRouterConnection",
+              "sourceFile": "providers/openrouter/testOpenRouterConnection",
+              "group": "providers/openrouter",
+              "children": [
+                {
+                  "id": "types/SidecarError::SidecarError",
+                  "symbol": "SidecarError",
+                  "sourceFile": "types/SidecarError",
+                  "group": "types",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "SidecarResponseFactory::SidecarResponseFactory",
+          "symbol": "SidecarResponseFactory",
+          "sourceFile": "SidecarResponseFactory",
+          "group": ".",
+          "children": []
+        },
+        {
+          "id": "types/VerificationResult::VerificationResult",
+          "symbol": "VerificationResult",
+          "sourceFile": "types/VerificationResult",
+          "group": "types",
+          "children": []
+        },
+        {
+          "id": "verifiers/verifyAgentRequest::verifyAgentRequest",
+          "symbol": "verifyAgentRequest",
+          "sourceFile": "verifiers/verifyAgentRequest",
+          "group": "verifiers",
+          "children": [
+            {
+              "id": "SidecarResponseFactory::SidecarResponseFactory",
+              "symbol": "SidecarResponseFactory",
+              "sourceFile": "SidecarResponseFactory",
+              "group": ".",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ai-agent-sidecar",
+  "version": "1.0.0",
+  "description": "AI Agent sidecar with Deno",
+  "scripts": {
+    "build": "node build.js",
+    "test": "deno test --allow-all",
+    "test:coverage": "rm -rf coverage && deno test --allow-all --coverage=coverage && deno coverage coverage --exclude='types/'",
+    "test:watch": "deno test --allow-all --watch",
+    "coverage:report": "deno coverage coverage --lcov --output=coverage/lcov.info",
+    "manual-test": "echo '{\"message\":\"test\",\"aiProvider\":{\"provider\":\"gemini\",\"apiKey\":\"test-key\"},\"conversationHistory\":[],\"model\":\"gemini-2.5-flash\"}' | deno run --allow-all index.ts"
+  }
+}

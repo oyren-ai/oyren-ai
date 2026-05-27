@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <entry>
+    <id>http://arxiv.org/abs/hep-th/9901001</id>
+    <title>Non Standard ID Paper</title>
+    <summary>This paper has an old-style arXiv identifier.</summary>
+    <published>1999-01-04T00:00:00Z</published>
+    <author><name>Old Format Author</name></author>
+    <category term="hep-th" />
+  </entry>
+</feed>

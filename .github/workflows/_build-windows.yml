@@ -1,0 +1,88 @@
+name: Build Windows
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+
+env:
+  DO_SPACES_BUCKET: oyren-ai-tauri-binaries
+  DO_SPACES_ENDPOINT: https://fra1.digitaloceanspaces.com
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Tauri app
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        run: pnpm tauri build --target x86_64-pc-windows-msvc
+
+      - name: Upload to DigitalOcean Spaces
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_WORKSPACES_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_WORKSPACES_SECRET }}
+        shell: bash
+        run: |
+          VERSION="${{ inputs.version }}"
+          BUNDLE_DIR=$(find src-tauri/target -path "*/release/bundle" -type d | head -1)
+          echo "Found bundle dir: $BUNDLE_DIR"
+          ls -R "$BUNDLE_DIR"
+
+          for f in $(find "$BUNDLE_DIR" -name "*.msi" -o -name "*.exe" -o -name "*.nsis.zip" -o -name "*.nsis.zip.sig" -o -name "*.msi.zip" -o -name "*.msi.zip.sig"); do
+            echo "Uploading $(basename $f) to $VERSION/windows/"
+            aws s3 cp "$f" "s3://$DO_SPACES_BUCKET/$VERSION/windows/$(basename $f)" \
+              --endpoint-url "$DO_SPACES_ENDPOINT" --acl public-read
+          done
+
+      - name: Save updater signature
+        shell: bash
+        run: |
+          BUNDLE_DIR=$(find src-tauri/target -path "*/release/bundle" -type d | head -1)
+          mkdir -p /tmp/updater-sigs
+          SIG_FILE=$(find "$BUNDLE_DIR" -name "*.nsis.zip.sig" | head -1)
+          if [ -n "$SIG_FILE" ]; then
+            cp "$SIG_FILE" /tmp/updater-sigs/windows-x86_64.sig
+          fi
+
+      - name: Upload signature artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: updater-sig-windows-x86_64
+          path: /tmp/updater-sigs/
+          if-no-files-found: warn
+
+      - name: Upload GitHub artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: oyren-desktop-windows
+          path: src-tauri/target/x86_64-pc-windows-msvc/release/bundle/
+          if-no-files-found: warn

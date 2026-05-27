@@ -1,0 +1,1 @@
+export type OperationType = 'chat' | 'detect-models' | 'test-connection';

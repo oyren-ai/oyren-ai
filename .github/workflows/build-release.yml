@@ -1,0 +1,77 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+env:
+  DO_SPACES_BUCKET: oyren-ai-tauri-binaries
+  DO_SPACES_ENDPOINT: https://fra1.digitaloceanspaces.com
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract version
+        id: version
+        run: |
+          VERSION=$(grep -o '"version": "[^"]*"' src-tauri/tauri.conf.json | cut -d'"' -f4)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Building version: $VERSION"
+
+  verify-spaces:
+    needs: version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify DigitalOcean Spaces connection
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_WORKSPACES_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_WORKSPACES_SECRET }}
+        run: |
+          VERSION="${{ needs.version.outputs.version }}"
+          echo "Verifying DO Spaces connection and creating folders for v$VERSION..."
+
+          for folder in linux macos/arm macos/x86 windows; do
+            aws s3api put-object \
+              --bucket "$DO_SPACES_BUCKET" \
+              --key "$VERSION/$folder/" \
+              --endpoint-url "$DO_SPACES_ENDPOINT" \
+              --acl public-read
+            echo "Created folder: $VERSION/$folder/"
+          done
+
+          echo "DO Spaces connection verified successfully."
+
+  build-linux:
+    needs: [version, verify-spaces]
+    uses: ./.github/workflows/_build-linux.yml
+    with:
+      version: ${{ needs.version.outputs.version }}
+    secrets: inherit
+
+  build-macos:
+    needs: [version, verify-spaces]
+    uses: ./.github/workflows/_build-macos.yml
+    with:
+      version: ${{ needs.version.outputs.version }}
+    secrets: inherit
+
+  build-windows:
+    needs: [version, verify-spaces]
+    uses: ./.github/workflows/_build-windows.yml
+    with:
+      version: ${{ needs.version.outputs.version }}
+    secrets: inherit
+
+  publish:
+    needs: [version, build-linux, build-macos, build-windows]
+    uses: ./.github/workflows/_publish-release.yml
+    with:
+      version: ${{ needs.version.outputs.version }}
+    secrets: inherit

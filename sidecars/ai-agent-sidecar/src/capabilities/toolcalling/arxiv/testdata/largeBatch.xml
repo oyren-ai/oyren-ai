@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">25</opensearch:totalResults>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00001v1</id>
+    <title>Scalable Transformer Architectures for Long Documents</title>
+    <summary>We present a method for scaling transformers to very long sequences.</summary>
+    <published>2024-01-01T00:00:00Z</published>
+    <author><name>Alice Zhang</name></author>
+    <author><name>Bob Smith</name></author>
+    <category term="cs.CL" />
+    <category term="cs.LG" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00002v2</id>
+    <title>Diffusion Models for Protein Folding</title>
+    <summary>A novel diffusion approach to predict 3D protein structures.</summary>
+    <published>2024-01-02T00:00:00Z</published>
+    <author><name>Carol Lee</name></author>
+    <category term="q-bio.BM" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00003</id>
+    <title>Federated Learning Under Non-IID Data</title>
+    <summary>Strategies for improving federated training with heterogeneous data.</summary>
+    <published>2024-01-03T00:00:00Z</published>
+    <author><name>Dave Patel</name></author>
+    <author><name>Eve Nakamura</name></author>
+    <author><name>Frank Wilson</name></author>
+    <category term="cs.LG" />
+    <category term="cs.DC" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00004v1</id>
+    <title>Quantum Error Correction with Surface Codes</title>
+    <summary>An overview of surface code techniques for fault-tolerant quantum computing.</summary>
+    <published>2024-01-04T00:00:00Z</published>
+    <author><name>Grace Hopper</name></author>
+    <category term="quant-ph" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00005v3</id>
+    <title>Neural Radiance Fields in Urban Scenes</title>
+    <summary>Extending NeRF to large-scale outdoor environments.</summary>
+    <published>2024-01-05T00:00:00Z</published>
+    <author><name>Hiro Tanaka</name></author>
+    <author><name>Isla Martinez</name></author>
+    <category term="cs.CV" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00006</id>
+    <title>Reinforcement Learning for Autonomous Driving</title>
+    <summary>Multi-agent RL applied to intersection navigation.</summary>
+    <published>2024-01-06T00:00:00Z</published>
+    <author><name>Jack Brown</name></author>
+    <category term="cs.AI" />
+    <category term="cs.RO" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00007v1</id>
+    <title>Causal Inference in Observational Studies</title>
+    <summary>New methods for estimating causal effects from observational data.</summary>
+    <published>2024-01-07T00:00:00Z</published>
+    <author><name>Kara Johansson</name></author>
+    <category term="stat.ME" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00008</id>
+    <title>Graph Neural Networks for Molecular Property Prediction</title>
+    <summary>GNN architectures tailored for chemical graph representations.</summary>
+    <published>2024-01-08T00:00:00Z</published>
+    <author><name>Leo Chen</name></author>
+    <author><name>Mia Rossi</name></author>
+    <category term="cs.LG" />
+    <category term="physics.chem-ph" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00009v2</id>
+    <title>Large Language Models as Few-Shot Learners</title>
+    <summary>Investigating in-context learning capabilities of LLMs at scale.</summary>
+    <published>2024-01-09T00:00:00Z</published>
+    <author><name>Noah Kim</name></author>
+    <category term="cs.CL" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00010</id>
+    <title>Adversarial Robustness in Image Classification</title>
+    <summary>Certified defenses against adversarial perturbations.</summary>
+    <published>2024-01-10T00:00:00Z</published>
+    <author><name>Olivia Dubois</name></author>
+    <author><name>Paul Novak</name></author>
+    <category term="cs.CV" />
+    <category term="cs.CR" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00011v1</id>
+    <title>Self-Supervised Speech Representation Learning</title>
+    <summary>Pre-training audio encoders without labelled transcripts.</summary>
+    <published>2024-01-11T00:00:00Z</published>
+    <author><name>Quinn Rivera</name></author>
+    <category term="cs.SD" />
+    <category term="eess.AS" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00012</id>
+    <title>Efficient Fine-Tuning with LoRA Adapters</title>
+    <summary>Parameter-efficient transfer learning for foundation models.</summary>
+    <published>2024-01-12T00:00:00Z</published>
+    <author><name>Rachel Svensson</name></author>
+    <category term="cs.LG" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00013v4</id>
+    <title>Zero-Shot Cross-Lingual Transfer</title>
+    <summary>Evaluating multilingual models on unseen languages.</summary>
+    <published>2024-01-13T00:00:00Z</published>
+    <author><name>Sam Okafor</name></author>
+    <author><name>Tina Müller</name></author>
+    <category term="cs.CL" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00014</id>
+    <title>Bayesian Optimization for Hyperparameter Tuning</title>
+    <summary>Gaussian-process based hyperparameter search strategies.</summary>
+    <published>2024-01-14T00:00:00Z</published>
+    <author><name>Uma Krishnan</name></author>
+    <category term="cs.LG" />
+    <category term="stat.ML" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00015v1</id>
+    <title>Vision Transformers for Medical Imaging</title>
+    <summary>ViT-based models for radiology and pathology tasks.</summary>
+    <published>2024-01-15T00:00:00Z</published>
+    <author><name>Victor Andersson</name></author>
+    <author><name>Wendy Liu</name></author>
+    <author><name>Xander Petrov</name></author>
+    <category term="cs.CV" />
+    <category term="cs.AI" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00016</id>
+    <title>Contrastive Learning for Tabular Data</title>
+    <summary>Adapting contrastive pre-training to structured datasets.</summary>
+    <published>2024-01-16T00:00:00Z</published>
+    <author><name>Yara Bento</name></author>
+    <category term="cs.LG" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00017v2</id>
+    <title>Multi-Modal Fusion for Video Understanding</title>
+    <summary>Combining audio, text, and visual streams for action recognition.</summary>
+    <published>2024-01-17T00:00:00Z</published>
+    <author><name>Zane Cooper</name></author>
+    <author><name>Amy Frost</name></author>
+    <category term="cs.CV" />
+    <category term="cs.MM" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00018</id>
+    <title>Differentiable Physics Simulators</title>
+    <summary>End-to-end learning through differentiable rigid-body dynamics.</summary>
+    <published>2024-01-18T00:00:00Z</published>
+    <author><name>Brian Park</name></author>
+    <category term="cs.GR" />
+    <category term="cs.LG" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00019v1</id>
+    <title>Privacy Preserving Machine Learning with Secure Aggregation</title>
+    <summary>Cryptographic protocols for gradient aggregation in distributed training.</summary>
+    <published>2024-01-19T00:00:00Z</published>
+    <author><name>Claudia Ruiz</name></author>
+    <author><name>Derek Huang</name></author>
+    <category term="cs.CR" />
+    <category term="cs.LG" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00020</id>
+    <title>Knowledge Distillation in Object Detection</title>
+    <summary>Compressing large detectors into real-time student models.</summary>
+    <published>2024-01-20T00:00:00Z</published>
+    <author><name>Elena Volkov</name></author>
+    <category term="cs.CV" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00021v3</id>
+    <title>Retrieval-Augmented Generation for Open-Domain QA</title>
+    <summary>Combining dense retrieval with generative reading for question answering.</summary>
+    <published>2024-01-21T00:00:00Z</published>
+    <author><name>Felix Gruber</name></author>
+    <author><name>Gina Torres</name></author>
+    <author><name>Hassan Ali</name></author>
+    <category term="cs.CL" />
+    <category term="cs.IR" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00022</id>
+    <title>Time Series Forecasting with State Space Models</title>
+    <summary>Mamba-style architectures applied to financial time series.</summary>
+    <published>2024-01-22T00:00:00Z</published>
+    <author><name>Ingrid Larsen</name></author>
+    <category term="cs.LG" />
+    <category term="stat.ML" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00023v1</id>
+    <title>Robotic Manipulation with Tactile Feedback</title>
+    <summary>Integrating tactile sensing into dexterous manipulation policies.</summary>
+    <published>2024-01-23T00:00:00Z</published>
+    <author><name>James Obi</name></author>
+    <category term="cs.RO" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00024</id>
+    <title>Sparse Mixture-of-Experts for Efficient Inference</title>
+    <summary>Routing strategies that maintain quality while reducing FLOPs.</summary>
+    <published>2024-01-24T00:00:00Z</published>
+    <author><name>Karen Walsh</name></author>
+    <author><name>Liam Cheng</name></author>
+    <category term="cs.LG" />
+    <category term="cs.CL" />
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00025v2</id>
+    <title>Neural Architecture Search with Hardware Constraints</title>
+    <summary>NAS methods that optimize for latency on edge devices.</summary>
+    <published>2024-01-25T00:00:00Z</published>
+    <author><name>Maria Santos</name></author>
+    <category term="cs.LG" />
+    <category term="cs.AR" />
+  </entry>
+</feed>

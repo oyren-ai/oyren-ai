@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <entry>
+    <id>http://arxiv.org/abs/1706.03762v2</id>
+    <title>Attention Is All You Need</title>
+    <summary>We propose a new simple network architecture, the Transformer.</summary>
+    <published>2017-06-12T17:57:34Z</published>
+    <author><name>Ashish Vaswani</name></author>
+    <author><name>Noam Shazeer</name></author>
+    <category term="cs.CL" />
+    <category term="cs.LG" />
+  </entry>
+</feed>

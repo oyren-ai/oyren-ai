@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">1</opensearch:totalResults>
+  <entry>
+    <id>http://arxiv.org/abs/2401.00001v1</id>
+    <title>  Messy
+    Title   With
+  Whitespace  </title>
+    <summary>  Summary   with
+    lots    of
+  extra   spaces  </summary>
+    <published>2024-01-01T00:00:00Z</published>
+    <author><name>Spacey Author</name></author>
+    <category term="cs.CL" />
+  </entry>
+</feed>

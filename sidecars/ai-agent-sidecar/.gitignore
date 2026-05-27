@@ -1,0 +1,12 @@
+# Test coverage
+coverage/
+*.lcov
+
+# Build output
+dist/
+ai-agent
+ai-agent-*
+
+# Dependencies
+node_modules/
+coverage_dir/

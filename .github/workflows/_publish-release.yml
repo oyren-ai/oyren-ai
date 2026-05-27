@@ -1,0 +1,98 @@
+name: Publish Release
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+
+env:
+  DO_SPACES_BUCKET: oyren-ai-tauri-binaries
+  DO_SPACES_ENDPOINT: https://fra1.digitaloceanspaces.com
+  DO_SPACES_CDN: https://oyren-ai-tauri-binaries.fra1.digitaloceanspaces.com
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download signature artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: updater-sig-*
+          merge-multiple: true
+          path: ./sigs
+
+      - name: Generate and upload update.json
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.DO_SPACES_WORKSPACES_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DO_SPACES_WORKSPACES_SECRET }}
+        run: |
+          VERSION="${{ inputs.version }}"
+          BASE_URL="$DO_SPACES_CDN/$VERSION"
+          PUB_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          echo "Signatures found:"
+          ls -la ./sigs/ || true
+
+          read_sig() {
+            local file="./sigs/$1.sig"
+            if [ -f "$file" ]; then cat "$file"; else echo ""; fi
+          }
+
+          SIG_DARWIN_AARCH64=$(read_sig darwin-aarch64)
+          SIG_DARWIN_X86_64=$(read_sig darwin-x86_64)
+          SIG_LINUX_X86_64=$(read_sig linux-x86_64)
+          SIG_WINDOWS_X86_64=$(read_sig windows-x86_64)
+
+          cat > update.json << ENDJSON
+          {
+            "version": "$VERSION",
+            "pub_date": "$PUB_DATE",
+            "platforms": {
+              "darwin-aarch64": {
+                "url": "$BASE_URL/macos/arm/oyren.app.tar.gz",
+                "signature": "$SIG_DARWIN_AARCH64"
+              },
+              "darwin-x86_64": {
+                "url": "$BASE_URL/macos/x86/oyren.app.tar.gz",
+                "signature": "$SIG_DARWIN_X86_64"
+              },
+              "linux-x86_64": {
+                "url": "$BASE_URL/linux/oyren.AppImage.tar.gz",
+                "signature": "$SIG_LINUX_X86_64"
+              },
+              "windows-x86_64": {
+                "url": "$BASE_URL/windows/oyren.nsis.zip",
+                "signature": "$SIG_WINDOWS_X86_64"
+              }
+            }
+          }
+          ENDJSON
+
+          echo "Generated update.json:"
+          cat update.json
+
+          aws s3 cp update.json "s3://$DO_SPACES_BUCKET/update.json" \
+            --endpoint-url "$DO_SPACES_ENDPOINT" --acl public-read \
+            --content-type "application/json"
+
+          echo ""
+          echo "Files uploaded for version $VERSION:"
+          aws s3 ls "s3://$DO_SPACES_BUCKET/$VERSION/" --recursive \
+            --endpoint-url "$DO_SPACES_ENDPOINT"
+
+      - name: Download all artifacts
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+        uses: actions/download-artifact@v4
+
+      - name: Create GitHub Release
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            oyren-desktop-*/**/*
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

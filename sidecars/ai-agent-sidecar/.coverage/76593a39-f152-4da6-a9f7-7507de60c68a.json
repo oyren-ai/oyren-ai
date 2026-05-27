@@ -1,0 +1,130 @@
+{
+  "scriptId": "335",
+  "url": "file:///Users/vorashilfarzaliyev/Documents/oyren.dev/oyren-ai/oyren-ai-tauri/sidecars/ai-agent-sidecar/agent.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [
+        {
+          "startOffset": 0,
+          "endOffset": 2573,
+          "count": 1
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "processMessage",
+      "ranges": [
+        {
+          "startOffset": 7,
+          "endOffset": 1044,
+          "count": 12
+        },
+        {
+          "startOffset": 95,
+          "endOffset": 117,
+          "count": 10
+        },
+        {
+          "startOffset": 118,
+          "endOffset": 135,
+          "count": 9
+        },
+        {
+          "startOffset": 137,
+          "endOffset": 295,
+          "count": 4
+        },
+        {
+          "startOffset": 295,
+          "endOffset": 370,
+          "count": 8
+        },
+        {
+          "startOffset": 370,
+          "endOffset": 496,
+          "count": 2
+        },
+        {
+          "startOffset": 496,
+          "endOffset": 778,
+          "count": 6
+        },
+        {
+          "startOffset": 779,
+          "endOffset": 783,
+          "count": 5
+        },
+        {
+          "startOffset": 822,
+          "endOffset": 826,
+          "count": 5
+        },
+        {
+          "startOffset": 861,
+          "endOffset": 868,
+          "count": 5
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "buildDetailedResponse",
+      "ranges": [
+        {
+          "startOffset": 1045,
+          "endOffset": 1427,
+          "count": 6
+        }
+      ],
+      "isBlockCoverage": true
+    },
+    {
+      "functionName": "handleRequest",
+      "ranges": [
+        {
+          "startOffset": 1523,
+          "endOffset": 2572,
+          "count": 7
+        },
+        {
+          "startOffset": 1616,
+          "endOffset": 1727,
+          "count": 2
+        },
+        {
+          "startOffset": 1727,
+          "endOffset": 1935,
+          "count": 5
+        },
+        {
+          "startOffset": 1935,
+          "endOffset": 2376,
+          "count": 2
+        },
+        {
+          "startOffset": 2154,
+          "endOffset": 2172,
+          "count": 0
+        },
+        {
+          "startOffset": 2232,
+          "endOffset": 2376,
+          "count": 0
+        },
+        {
+          "startOffset": 2381,
+          "endOffset": 2570,
+          "count": 1
+        },
+        {
+          "startOffset": 2495,
+          "endOffset": 2510,
+          "count": 0
+        }
+      ],
+      "isBlockCoverage": true
+    }
+  ]
+}

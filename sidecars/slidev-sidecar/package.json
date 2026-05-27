@@ -1,0 +1,26 @@
+{
+  "name": "slidev-sidecar",
+  "version": "1.0.0",
+  "description": "Slidev presentation to PDF converter with bundled Node.js",
+  "scripts": {
+    "build": "pkg slidev_cli.js --output slidev-sidecar && node rename.js",
+    "test": "node slidev_cli.js ./slides.md ./test-output.pdf"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.8.0",
+    "@slidev/theme-default": "^0.25.0",
+    "playwright-chromium": "^1.56.1"
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^5.15.0"
+  },
+  "pkg": {
+    "scripts": [
+      "slidev_cli.js"
+    ],
+    "assets": [
+      "node_modules/**/*",
+      "../node-v24.11.0-darwin-arm64/bin/node"
+    ]
+  }
+}

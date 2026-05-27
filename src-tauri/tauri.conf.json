@@ -1,0 +1,131 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "oyren",
+  "version": "0.0.7",
+  "identifier": "ai.oyren.app",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1425",
+    "beforeBuildCommand": "pnpm build:oyren-ai-agent-sidecar && pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "OyrenAI",
+        "width": 1512,
+        "height": 982,
+        "minWidth": 1280,
+        "minHeight": 831
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' ipc: blob: https://unpkg.com https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net; worker-src 'self' blob: https://unpkg.com; connect-src 'self' ipc: blob: https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' asset: data: blob: http://asset.localhost https://asset.localhost;",
+      "capabilities": [
+        "default"
+      ],
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$APPDATA/ai.oyren.app/**",
+          "$LOCALAPPDATA/ai.oyren.app/**",
+          "$HOME/Library/Application Support/ai.oyren.app/**",
+          "$HOME/.local/share/ai.oyren.app/**"
+        ]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "publisher": "Oyren Team",
+    "copyright": "© 2026 Oyren Team. All rights reserved.",
+    "category": "Education",
+    "shortDescription": "Academic IDE for students and researchers",
+    "longDescription": "Oyren is a comprehensive academic IDE that provides an integrated workspace for PDF reading, note-taking, LaTeX editing, and AI-powered research assistance.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [],
+    "externalBin": [
+      "binaries/oyren-ai-agent-sidecar"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "10.15",
+      "signingIdentity": null,
+      "entitlements": "entitlements.plist",
+      "dmg": {
+        "appPosition": {
+          "x": 180,
+          "y": 170
+        },
+        "applicationFolderPosition": {
+          "x": 480,
+          "y": 170
+        },
+        "windowSize": {
+          "width": 660,
+          "height": 400
+        },
+        "windowPosition": {
+          "x": 200,
+          "y": 120
+        }
+      }
+    },
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "http://timestamp.digicert.com",
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      },
+      "wix": {
+        "language": "en-US",
+        "dialogImagePath": null,
+        "bannerPath": null
+      }
+    },
+    "linux": {
+      "appimage": {
+        "bundleMediaFramework": true
+      },
+      "deb": {
+        "depends": [
+          "libgtk-3-0",
+          "libwebkit2gtk-4.0-37 (>= 2.28.0)",
+          "libappindicator3-1"
+        ],
+        "section": "education"
+      },
+      "rpm": {
+        "release": "1",
+        "epoch": 0,
+        "depends": [
+          "gtk3",
+          "webkit2gtk3",
+          "libappindicator"
+        ]
+      }
+    }
+  },
+  "plugins": {
+    "deep-link": {
+      "desktop": {
+        "schemes": ["oyren"]
+      }
+    },
+    "updater": {
+      "endpoints": [
+        "https://oyren.ai/api/desktop/update"
+      ],
+      "dialog": false,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEIzQTVEN0ZFRDFGQTM3OUMKUldTY04vclIvdGVsczBxc0RodG5NdnNHVEU1dStGMXd2em9tTU9BQU0vUVplL2cxY1dtSjl2NjEK"
+    }
+  }
+}
